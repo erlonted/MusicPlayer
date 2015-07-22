@@ -16,11 +16,12 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse applica
 app.use(methodOverride());
 
 // listen (start app with node server.js) ======================================
-app.listen(8080);
+app.listen(8081);
 console.log("App listening on port 8080");
 
 
 
 app.get('*', function (req, res) {
-    res.sendfile('index.html'); // load the single view file (angular will handle the page changes on the front-end)
+    console.log("Aqui");
+    res.sendfile('./public/home.html'); // load the single view file (angular will handle the page changes on the front-end)
 });
